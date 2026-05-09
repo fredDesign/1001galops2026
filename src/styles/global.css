@@ -187,12 +187,29 @@
 }
 
 /* Marquee animation */
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-33.333%); }
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+  /* pour compenser le padding-right des items et éviter un saut au début de l'animation */
 }
-.animate-marquee {
-    animation: marquee 50s linear infinite;
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem; /* équivalent gap-12 */
+  flex-shrink: 0;
+  padding-right: 3.5rem;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* Scroll reveal */

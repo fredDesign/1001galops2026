@@ -20,10 +20,10 @@ const links = {
 <footer class="bg-forest-deep text-cream pt-20 pb-10" aria-label="Pied de page">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
 
-    <div class="grid lg:grid-cols-12 gap-10 pb-14 border-b border-cream/10">
+    <div class="grid grid-cols-2  lg:grid-cols-12 gap-10 pb-14 border-b border-cream/10">
 
       <!-- Brand -->
-      <div class="lg:col-span-5">
+      <div class="col-span-2 lg:col-span-5">
         <div class="flex items-baseline gap-1.5 mb-5">
           <span class="font-display text-[36px] leading-none font-semibold uppercase text-cream">1001</span>
           <span class="font-display text-[36px] leading-none font-semibold uppercase text-blush">Galops</span>
@@ -35,7 +35,7 @@ const links = {
       </div>
 
       <!-- Expériences -->
-      <div class="lg:col-span-2">
+      <div class="col-span-1 lg:col-span-2">
         <div class="text-sand/50 text-[10px] uppercase tracking-[0.25em] mb-4">Expériences</div>
         <ul class="flex flex-col gap-3 text-cream/85 text-sm">
           {links.experiences.map((l) => (
@@ -45,7 +45,7 @@ const links = {
       </div>
 
       <!-- À propos -->
-      <div class="lg:col-span-2">
+      <div class="col-span-1 lg:col-span-2">
         <div class="text-sand/50 text-[10px] uppercase tracking-[0.25em] mb-4">À propos</div>
         <ul class="flex flex-col gap-3 text-cream/85 text-sm">
           {links.apropos.map((l) => (
@@ -55,7 +55,7 @@ const links = {
       </div>
 
       <!-- Contact -->
-      <div class="lg:col-span-3">
+      <div class="col-span-2 lg:col-span-3">
         <div class="text-sand/50 text-[10px] uppercase tracking-[0.25em] mb-4">Contact</div>
         <address class="not-italic flex flex-col gap-3 text-cream/85 text-sm">
           <a href="mailto:contact@1001galops.fr" class="hover:text-blush transition-colors">contact@1001galops.fr</a>
@@ -77,8 +77,10 @@ const links = {
     <!-- Legal -->
     <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 text-[12px] text-sand/50">
       <div class="flex items-baseline gap-1.5">
-        <span class="font-display font-semibold uppercase text-xl text-cream">1001</span>
-        <span class="font-display font-semibold uppercase text-xl text-blush">Galops</span>
+        <div class="logo_text flex gap-1">
+          <span class="font-display font-semibold uppercase text-xl text-cream">1001</span>
+          <span class="font-display font-semibold uppercase text-xl text-blush">Galops</span>
+        </div>
         <span class="ml-3">© 2026 — Tous droits réservés</span>
       </div>
       <LegalModals client:load />
