@@ -1,0 +1,31 @@
+{
+  "name": "1001 Galops — Balades à cheval & yoga équestre",
+  "short_name": "1001 Galops",
+  "description": "Balades à cheval, yoga équestre et événements nature en forêt du Vexin. À 45 minutes de Paris, ouvert 7j/7.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6ee",
+  "theme_color": "#143e54",
+  "lang": "fr",
+  "orientation": "portrait-primary",
+  "categories": ["lifestyle", "sports", "travel"],
+  "icons": [
+    {
+      "src": "/images/fav/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/fav/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/fav/favicon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

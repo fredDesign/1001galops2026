@@ -5,6 +5,7 @@ interface Props {
   title?: string
   description?: string
   image?: string
+  imageAlt?: string
   type?: "website" | "article"
   noindex?: boolean
 }
@@ -13,6 +14,7 @@ const {
   title = "1001 Galops — Balades à cheval, yoga équestre & événements nature près de Paris",
   description = "Balades à cheval, yoga équestre et événements nature en forêt du vexin. À 45 minutes de Paris, ouvert 7j/7. Tous niveaux, dès 45€.",
   image = "images/og-image.jpg",
+  imageAlt = "Cheval en liberté dans la forêt du Vexin — 1001 Galops",
   type = "website",
   noindex = false,
 } = Astro.props
@@ -33,7 +35,15 @@ const schema = {
       telephone: "+33678536430",
       email: "contact@1001galops.fr",
       image: `${siteUrl}/images/og-image.jpg`,
-      logo: `${siteUrl}/images/logo.png`,
+      logo: {
+        "@type": "ImageObject",
+        "@id": `${siteUrl}/#logo`,
+        url: `${siteUrl}/images/logo.png`,
+        contentUrl: `${siteUrl}/images/logo.png`,
+        width: 600,
+        height: 896,
+        caption: "1001 Galops",
+      },
       priceRange: "€€",
       currenciesAccepted: "EUR",
       paymentAccepted: "Cash, Credit Card",
@@ -69,12 +79,23 @@ const schema = {
       hasMap: "https://maps.google.com/?q=Drocourt+78440",
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "55",
-        bestRating: "5",
+        ratingValue: 4.9,
+        reviewCount: 55,
+        bestRating: 5,
       },
       amenityFeature: [
         { "@type": "LocationFeatureSpecification", name: "Parking gratuit", value: true },
+      ],
+      founder: { "@id": `${siteUrl}/#founder` },
+      sameAs: ["https://www.facebook.com/1001galops"],
+      areaServed: [
+        { "@type": "AdministrativeArea", name: "Île-de-France" },
+        { "@type": "AdministrativeArea", name: "Yvelines" },
+        { "@type": "AdministrativeArea", name: "Val-d'Oise" },
+        { "@type": "City", name: "Paris" },
+        { "@type": "City", name: "Mantes-la-Jolie" },
+        { "@type": "City", name: "Cergy" },
+        { "@type": "City", name: "Versailles" },
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
@@ -114,11 +135,86 @@ const schema = {
       },
     },
     {
+      "@type": "Person",
+      "@id": `${siteUrl}/#founder`,
+      name: "Scheherazade Bracht",
+      jobTitle: "Fondatrice & guide équestre",
+      worksFor: { "@id": `${siteUrl}/#business` },
+      hasCredential: [
+        { "@type": "EducationalOccupationalCredential", "name": "BPJEPS Équitation" },
+        { "@type": "EducationalOccupationalCredential", "name": "Tourisme Équestre" },
+        { "@type": "EducationalOccupationalCredential", "name": "Soigneuse animalière" },
+      ],
+    },
+    {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
       name: "1001 Galops",
       inLanguage: ["fr", "en"],
+    },
+    {
+      "@type": "Review",
+      itemReviewed: { "@id": `${siteUrl}/#business` },
+      author: { "@type": "Person", name: "David S." },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody: "Une expérience inoubliable ! Dès notre arrivée, nous avons été accueillis chaleureusement par Schéhérazade, dont la gentillesse et le professionnalisme font toute la différence. Ici, les chevaux vivent au plus près de leur état naturel, dans le respect de leurs besoins, et cela se ressent immédiatement.",
+    },
+    {
+      "@type": "Review",
+      itemReviewed: { "@id": `${siteUrl}/#business` },
+      author: { "@type": "Person", name: "Jonathann VW." },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody: "Très belle expérience pour ma femme et moi. Organisation d'une balade pour une demande en mariage. Je recommande vivement, la monitrice est top et très disponible.",
+    },
+    {
+      "@type": "Review",
+      itemReviewed: { "@id": `${siteUrl}/#business` },
+      author: { "@type": "Person", name: "Emeline M." },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody: "Mon mari avait réservé chez 1001 Galops pour nos 10 ans. Moi qui n'avait pas pratiqué l'équitation depuis un moment j'ai été ravie de m'occuper des chevaux. Et le plus c'est l'organisation en secret de sa demande qui a été parfaite !",
+    },
+    {
+      "@type": "Review",
+      itemReviewed: { "@id": `${siteUrl}/#business` },
+      author: { "@type": "Person", name: "Dany M." },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody: "Rando et Yin Yoga ! Une première et magnifique expérience avec Shéhérazade pour les chevaux et Elisabeth pour le Yoga ! Une bouffée d'oxygène avec des chevaux bien dans leurs pattes !",
+    },
+    {
+      "@type": "Review",
+      itemReviewed: { "@id": `${siteUrl}/#business` },
+      author: { "@type": "Person", name: "Mehdi D." },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody: "Beautiful scenery, amazing horses, and a brilliant instructor. A perfect day, highly recommended!",
+    },
+    {
+      "@type": "Review",
+      itemReviewed: { "@id": `${siteUrl}/#business` },
+      author: { "@type": "Person", name: "Anne-Marie G." },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody: "La structure idéale pour une pratique pleine nature authentique et raisonnée ! Bien être animal et respect de la nature au programme. A travers une pratique régulière, je redécouvre le Vexin, tout en apprenant beaucoup grâce aux adorables chevaux de Shéhérazade !",
+    },
+    {
+      "@type": "Review",
+      itemReviewed: { "@id": `${siteUrl}/#business` },
+      author: { "@type": "Person", name: "Aurélien" },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody: "Un moment magique à deux avec Schéhérazade et ses magnifiques chevaux ! Une chouette balade au calme, dans les chaumes et les bois à travers le Vexin à notre rythme, parfaitement adapté à nos allures de débutants.",
+    },
+    {
+      "@type": "Review",
+      itemReviewed: { "@id": `${siteUrl}/#business` },
+      author: { "@type": "Person", name: "Laëtitia R." },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody: "Merci infiniment Schéhérazade pour cette balade à cheval, votre amabilité, votre passion transmise… La surprise a vraiment fait plaisir à monsieur. Au-delà de la promenade, avoir à s'occuper des chevaux avant et après rend l'expérience entière.",
+    },
+    {
+      "@type": "Review",
+      itemReviewed: { "@id": `${siteUrl}/#business` },
+      author: { "@type": "Person", name: "Sarah R." },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody: "Une balade hors du temps où l'on prend vraiment le temps de s'occuper des chevaux avant la balade. Scheherazade est une accompagnatrice passionnante et très à l'écoute des cavaliers et des chevaux. Je la recommande les yeux fermés.",
     },
     {
       "@type": "BreadcrumbList",
@@ -148,7 +244,7 @@ const schema = {
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/images/fav/favicon.svg" />
     <link rel="icon" type="image/png" href="/images/fav/favicon.png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="/images/fav/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="/images/fav/apple-icon-180x180.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Open Graph -->
@@ -157,6 +253,7 @@ const schema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, siteUrl).toString()} />
+    <meta property="og:image:alt" content={imageAlt} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="fr_FR" />
@@ -168,6 +265,7 @@ const schema = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, siteUrl).toString()} />
+    <meta name="twitter:image:alt" content={imageAlt} />
 
     <!-- Geo -->
     <meta name="geo.region" content="FR-78" />
