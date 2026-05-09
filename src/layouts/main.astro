@@ -1,13 +1,182 @@
 ---
 import "@/styles/global.css"
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  type?: "website" | "article"
+  noindex?: boolean
+}
+
+const {
+  title = "1001 Galops — Balades à cheval, yoga équestre & événements nature près de Paris",
+  description = "Balades à cheval, yoga équestre et événements nature en forêt du vexin. À 45 minutes de Paris, ouvert 7j/7. Tous niveaux, dès 45€.",
+  image = "images/og-image.jpg",
+  type = "website",
+  noindex = false,
+} = Astro.props
+
+const siteUrl = "https://1001galops.fr"
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "TouristAttraction", "SportsActivityLocation"],
+      "@id": `${siteUrl}/#business`,
+      name: "1001 Galops",
+      description:
+        "Centre d'équitation nature proposant balades à cheval, yoga équestre et événements en forêt du vexin.",
+      url: siteUrl,
+      telephone: "+33678536430",
+      email: "contact@1001galops.fr",
+      image: `${siteUrl}/images/og-image.jpg`,
+      logo: `${siteUrl}/images/logo.png`,
+      priceRange: "€€",
+      currenciesAccepted: "EUR",
+      paymentAccepted: "Cash, Credit Card",
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "09:00",
+          closes: "18:00",
+        },
+      ],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Domaine de la Clairière",
+        postalCode: "78440",
+        addressLocality: "Drocourt",
+        addressRegion: "Île-de-France",
+        addressCountry: "FR",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 49.056595859895005,
+        longitude: 1.7794666918393576,
+      },
+      hasMap: "https://maps.google.com/?q=Drocourt+78440",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "55",
+        bestRating: "5",
+      },
+      amenityFeature: [
+        { "@type": "LocationFeatureSpecification", name: "Parking gratuit", value: true },
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Expériences équestres",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            name: "Balade à cheval",
+            description: "Balades en forêt de 1h à 4h, tous niveaux.",
+            price: "45",
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+          },
+          {
+            "@type": "Offer",
+            name: "Yoga équestre",
+            description: "Séance de 2h mêlant yoga et connexion animale.",
+            price: "75",
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+          },
+          {
+            "@type": "Offer",
+            name: "Événement sur mesure",
+            description: "Team building, anniversaires et séminaires nature.",
+            availability: "https://schema.org/InStock",
+          },
+          {
+            "@type": "Offer",
+            name: "Cours d'équitation de pleine nature",
+            description: "Séances de 2h pour apprendre à se balader en autonomie.",
+            price: "70",
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+          },
+        ],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "1001 Galops",
+      inLanguage: ["fr", "en"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Accueil",
+          item: siteUrl,
+        },
+      ],
+    },
+  ],
+}
 ---
 
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#143e54" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="keywords" content="balade à cheval, équitation nature, yoga équitation, événements équestres, EVJF, mariage, forêt du vexin, proche paris, activité nature, expérience équestre" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/images/fav/favicon.svg" />
+    <link rel="icon" type="image/png" href="/images/fav/favicon.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/images/fav/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, siteUrl).toString()} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:site_name" content="1001 Galops" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, siteUrl).toString()} />
+
+    <!-- Geo -->
+    <meta name="geo.region" content="FR-78" />
+    <meta name="geo.placename" content="Drocourt" />
+    <meta name="geo.position" content="49.056595859895005;1.7794666918393576" />
+    <meta name="ICBM" content="49.056595859895005, 1.7794666918393576" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
   </head>
   <body>
     <slot />

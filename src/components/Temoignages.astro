@@ -1,0 +1,158 @@
+---
+const temoignages = [
+  {
+    quote: "Une expérience inoubliable ! Dès notre arrivée, nous avons été accueillis chaleureusement par Schéhérazade, dont la gentillesse et le professionnalisme font toute la différence. Ici, les chevaux vivent au plus près de leur état naturel, dans le respect de leurs besoins, et cela se ressent immédiatement. Le matériel mis à disposition est du reste de qualité, ce qui distingue cette structure de nombreux clubs. Merci Scheherazade pour cette belle expérience que nous renouvellerons avec grand plaisir.",
+    name: "David S.",
+    experience: "Balade privatisée",
+    initial: "D",
+    wide: true,
+  },
+  {
+    quote: "Très belle expérience pour ma femme et moi. Organisation d'une balade pour une demande en mariage. Je recommande vivement, la monitrice est top et très disponible.",
+    name: "Jonathann VW.",
+    experience: "Demande en Mariage",
+    initial: "J",
+  },
+  {
+    quote: "Mon mari avait réservé chez 1001 Galops pour nos 10 ans. Moi qui n'avait pas pratiqué l'équitation depuis un moment j'ai été ravie de m'occuper des chevaux. Et le plus c'est l'organisation en secret de sa demande qui a été parfaite! Merci beaucoup à la gérante pour sa participation à ce moment magique",
+    name: "Emeline M.",
+    experience: "Demande en Mariage",
+    initial: "E",
+  },
+  {
+    quote: "Rando et Yin Yoga ! Une première et magnifique expérience avec Shéhérazade pour les chevaux et Elisabeth pour le Yoga ! Une bouffée d'oxygène avec des chevaux bien dans leurs pattes ! Merci pour ce moment de complète détente !",
+    name: "Dany M.",
+    experience: "Yoga équitation ",
+    initial: "D",
+  },
+  {
+    quote: "Beautiful scenery, amazing horses, and a brilliant instructor. A perfect day, highly recommended! Thank you Sheherazade",
+    name: "Mehdi D.",
+    experience: "Balade privatisée",
+    initial: "M",
+  },
+  {
+    quote: "La structure idéale pour une pratique pleine nature authentique et raisonnée ! Bien être animal et respect de la nature au programme. A travers une pratique régulière, je redécouvre le Vexin, tout en apprenant beaucoup grâce aux adorables chevaux de Shéhérazade !",
+    name: "Anne-Marie G.",
+    experience: "Balade en groupe",
+    initial: "A",
+  },
+  {
+    quote: "Un moment magique à deux avec Schéhérazade et ses magnifiques chevaux ! Une chouette balade au calme, dans les chaumes et les bois à travers le Vexin à notre rythme, parfaitement adapté à nos allures de débutants. On a adoré les moments de complicité avec les chevaux. Un grand merci à vous pour ce beau moment, mêlant découverte et passion équestre... On reviendra sans hésiter ! Bises à Fidji et Diablo :)",
+    name: "Aurélien",
+    experience: "Balade privatisée",
+    initial: "A",
+    wide: true,
+  },
+  {
+    quote: "Merci infiniment Schéhérazade pour cette balade à cheval, votre amabilité, votre passion transmise…. La surprise a vraiment fait plaisir à monsieur. Au-delà de la promenade, avoir à s’occuper des chevaux avant et après rend l’expérience entière et permet de créer une complicité avec Fidji et Diablo 💕 Vivement la prochaine fois ! Leti & Mag",
+    name: "Laëtitia R.",
+    experience: "Balade privatisée",
+    initial: "L",
+    wide: true,
+  },
+  {
+    quote: "Une balade hors du temps où l’on prend vraiment le temps de s’occuper des chevaux avant la balade. Scheherazade est une accompagnatrice passionnante et très à l’écoute des cavaliers et des chevaux. Je la recommande les yeux fermés",
+    name: "Sarah R.",
+    experience: "Balade privatisée",
+    initial: "S",
+  },
+]
+
+// Duplicate for a smoother infinite loop with few slides
+const slides = [...temoignages, ...temoignages]
+---
+
+<section id="temoignages" class="bg-cream py-24 lg:py-36 reveal" aria-labelledby="temoignages-heading">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 lg:mb-16 gap-6">
+      <div>
+        <div class="flex items-center gap-3 text-forest/70 text-[11px] uppercase tracking-[0.32em] mb-6 font-medium">
+          <span class="w-10 h-px bg-terra shrink-0"></span>
+          <span>Avis</span>
+        </div>
+        <h2 id="temoignages-heading" class="font-display text-forest-deep text-[clamp(40px,7vw,108px)] leading-[0.95] tracking-tight">
+          Ils essaient.<br/>
+          <span class="font-editorial italic text-forest">Ils reviennent.</span>
+        </h2>
+      </div>
+
+      <div class="flex items-center gap-2 text-forest-deep" aria-label="Note moyenne 4.9 sur 5 — 55 avis">
+        <div class="flex text-gold" aria-hidden="true">
+          {Array(5).fill(null).map(() => (
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.4 4.8 17.1l1-5.8L1.5 7.2l5.9-.8z"/>
+            </svg>
+          ))}
+        </div>
+        <span class="font-display text-[26px] ml-2">4.9</span>
+        <span class="text-sm text-forest-deep/65 font-light">· 55 avis</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Carousel full-bleed -->
+  <div class="embla overflow-hidden pl-6 lg:pl-10" style="--max-offset: calc((100vw - 1400px) / 2)">
+    <div class="embla__container flex -ml-6 lg:-ml-7">
+      {slides.map((t, i) => (
+        <div
+          class:list={[
+            "embla__slide shrink-0 pl-6 lg:pl-7",
+            t.wide ? "w-[min(560px,82vw)]" : "w-[min(360px,82vw)]",
+          ]}
+          aria-hidden={i >= temoignages.length ? "true" : undefined}
+        >
+          <div class="bg-ivory border border-forest/12 rounded-[24px] p-8 lg:p-9 flex flex-col gap-5 h-full">
+            <svg width="34" height="26" viewBox="0 0 40 32" fill="none" class="text-terra shrink-0" aria-hidden="true">
+              <path d="M0 32V16C0 7 7 0 16 0v6c-5 0-9 5-9 10h9v16H0zm22 0V16c0-9 7-16 16-16v6c-5 0-9 5-9 10h9v16H22z" fill="currentColor" opacity="0.85"/>
+            </svg>
+
+            <blockquote class="text-forest-deep text-[18px] lg:text-[20px] leading-[1.4] font-editorial italic flex-1">
+              « {t.quote} »
+            </blockquote>
+
+            <footer class="pt-5 border-t border-forest/12 flex items-center gap-4">
+              <div
+                class="w-11 h-11 rounded-full bg-forest text-cream flex items-center justify-center font-display italic text-lg shrink-0"
+                aria-hidden="true"
+              >
+                {t.initial}
+              </div>
+              <div>
+                <div class="font-medium text-forest-deep text-[14px]">{t.name}</div>
+                <div class="text-[12px] text-forest-deep/60 font-light">{t.experience}</div>
+              </div>
+            </footer>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import EmblaCarousel from 'embla-carousel'
+  import Autoplay from 'embla-carousel-autoplay'
+
+  const emblaNode = document.querySelector<HTMLElement>('.embla')
+  if (emblaNode) {
+    EmblaCarousel(
+      emblaNode,
+      {
+        loop: true,
+        align: 'start',
+        dragFree: true,
+        watchDrag: true,
+      },
+      [
+        Autoplay({
+          delay: 3500,
+          stopOnInteraction: false,
+          stopOnMouseEnter: true,
+        }),
+      ]
+    )
+  }
+</script>

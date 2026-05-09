@@ -1,0 +1,99 @@
+---
+const photos = [
+  {
+    src: "/images/gallerie/balade_1.jpg",
+    alt: "Cheval au galop en forêt",
+    caption: "L'herbe de printemps",
+    class: "col-span-6 lg:col-span-5 lg:row-span-2 aspect-[1/1] lg:max-w-full lg:h-full",
+  },
+  {
+    src: "/images/gallerie/photo_9.jpg",
+    alt: "Balade équestre au milieu des champs de colza en fleur",
+    caption: "Plaine · Colza",
+    class: "col-span-3 lg:col-span-4 aspect-[4/3] h-full max-w-full sm:max-w-full sm:h-full lg:max-w-full lg:h-full",
+  },
+  {
+    src: "/images/gallerie/photo_3.jpg",
+    alt: "Connexion avec le cheval",
+    caption: "Des liens uniques",
+    class: "col-span-3 lg:col-span-3 aspect-[3/4]",
+  },
+  {
+    src: "/images/gallerie/photo_7.jpg",
+    alt: "Détail équestre — portrait",
+    caption: "Fort intérieur",
+    class: "col-span-3 lg:col-span-3 aspect-square",
+  },
+  {
+    src: "/images/gallerie/photo_8.jpg",
+    alt: "Groupe en balade équestre",
+    caption: "Groupe en balade",
+    class: "col-span-3 lg:col-span-4 aspect-5/3] h-full max-w-full lg:max-w-auto ",
+  },
+  {
+    src: "/images/gallerie/photo_10.jpg",
+    alt: "Balade privatisée en couple",
+    caption: "Balade privatisée en couple",
+    class: "col-span-3 lg:col-span-4 aspect-[5/3] h-full max-w-full lg:max-w-auto ",
+  },
+  {
+    src: "/images/gallerie/photo_12.jpg",
+    alt: "Yoga équitation au milieu des chevaux dans le Vexin",
+    caption: "Yoga équitation",
+    class: "col-span-3 lg:col-span-4 aspect-[5/3] h-full max-w-full  lg:max-w-auto ",
+  },
+  {
+    src: "/images/gallerie/photo_11.jpg",
+    alt: "Les chevaux au pré, en liberté au coucher du soleil",
+    caption: "Les chevaux au pré",
+    class: "col-span-6 lg:col-span-4 aspect-[4/3] h-full max-w-full sm:h-full lg:max-w-auto lg:h-full",
+  },
+]
+---
+
+<section id="galerie" class="bg-ivory py-24 lg:py-36 text-forest-deep reveal" aria-labelledby="galerie-heading">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+
+    <div class="flex items-end justify-between mb-14 lg:mb-16 gap-6">
+      <div>
+        <div class="flex items-center gap-3 text-forest/70 text-[11px] uppercase tracking-[0.32em] mb-6 font-medium">
+          <span class="w-10 h-px bg-terra shrink-0"></span>
+          <span>Galerie</span>
+        </div>
+        <h2 id="galerie-heading" class="font-display text-[clamp(40px,7vw,108px)] leading-[0.95] tracking-tight">
+          Vivez<br/>
+          <span class="font-editorial italic text-forest">l'expérience.</span>
+        </h2>
+      </div>
+      <a
+        href="https://facebook.com/1001galops"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden md:inline-flex items-center gap-3 text-forest text-[11px] uppercase tracking-[0.28em] font-medium border-b border-forest/30 pb-1 hover:border-terra hover:text-terra transition-colors"
+        aria-label="Voir notre Facebook"
+      >
+        Voir Facebook
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-6 lg:grid-cols-12 gap-3 lg:gap-4">
+      {photos.map((photo) => (
+        <div class={`${photo.class} relative rounded-2xl overflow-hidden group`}>
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest-deep/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.28em] opacity-0 group-hover:opacity-100 transition-opacity text-cream font-light">
+            {photo.caption}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

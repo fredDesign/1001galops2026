@@ -1,0 +1,90 @@
+---
+---
+
+<nav
+  id="site-nav"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6"
+>
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between">
+
+    <a href="#" class="flex items-baseline gap-1.5" aria-label="1001 Galops — Accueil">
+      <span class="font-display font-semibold text-[26px] leading-none text-cream">1001</span>
+      <span class="font-display font-semibold text-[26px] leading-none text-blush uppercase">Galops</span>
+    </a>
+
+    <ul id="nav-menu" class="nav-menu nav-menu-pill">
+      <li><a href="#balades">Balades</a></li>
+      <li><a href="#evenements">Evenements</a></li>
+      <li><a href="#yoga">Yoga</a></li>
+      <li><a href="#lieu">Le lieu</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <a
+        href="#contact"
+        class="group inline-flex items-center gap-2 bg-cream hover:bg-blush text-forest-deep px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.28em] font-medium transition-colors"
+      >
+        Réserver
+      </a>
+
+      <!-- Mobile menu button -->
+      <button
+        id="nav-mobile-toggle"
+        class="lg:hidden flex flex-col gap-1.5 p-2 text-cream"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <span class="w-6 h-[1.5px] bg-current transition-all"></span>
+        <span class="w-6 h-[1.5px] bg-current transition-all"></span>
+        <span class="w-4 h-[1.5px] bg-current transition-all"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="nav-mobile-menu"
+    class="hidden lg:hidden bg-forest-deep/95 backdrop-blur-xl border-t border-cream/10 px-6 py-6 flex flex-col gap-5"
+  >
+    <a class="text-cream/85 hover:text-blush transition-colors text-sm uppercase tracking-[0.2em]" href="#balades">Balades</a>
+    <a class="text-cream/85 hover:text-blush transition-colors text-sm uppercase tracking-[0.2em]" href="#evenements">Evenements</a>
+    <a class="text-cream/85 hover:text-blush transition-colors text-sm uppercase tracking-[0.2em]" href="#yoga">Yoga</a>
+    <a class="text-cream/85 hover:text-blush transition-colors text-sm uppercase tracking-[0.2em]" href="#lieu">Le lieu</a>
+    <a class="text-cream/85 hover:text-blush transition-colors text-sm uppercase tracking-[0.2em]" href="#galerie">Galerie</a>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById("site-nav")!
+  const navMenu = document.getElementById("nav-menu")!
+  const mobileToggle = document.getElementById("nav-mobile-toggle")!
+  const mobileMenu = document.getElementById("nav-mobile-menu")!
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+      nav.classList.add("bg-forest-deep/92", "backdrop-blur-xl", "py-3", "border-b", "border-cream/5")
+      nav.classList.remove("py-6")
+      navMenu.classList.remove("nav-menu-pill")
+      navMenu.classList.add("nav-menu-ghost")
+    } else {
+      nav.classList.remove("bg-forest-deep/92", "backdrop-blur-xl", "py-3", "border-b", "border-cream/5")
+      nav.classList.add("py-6")
+      navMenu.classList.remove("nav-menu-ghost")
+      navMenu.classList.add("nav-menu-pill")
+    }
+  }, { passive: true })
+
+  mobileToggle.addEventListener("click", () => {
+    const isOpen = !mobileMenu.classList.contains("hidden")
+    mobileMenu.classList.toggle("hidden")
+    mobileToggle.setAttribute("aria-expanded", String(!isOpen))
+  })
+
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden")
+      mobileToggle.setAttribute("aria-expanded", "false")
+    })
+  })
+</script>

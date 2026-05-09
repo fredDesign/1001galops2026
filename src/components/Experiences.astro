@@ -1,0 +1,313 @@
+---
+const balades = [
+  {
+    num: "01",
+    category: "Balade en groupe",
+    badge: "3 — 4h",
+    image: "/images/balade_4.jpg",
+    alt: "Balade à cheval en pleine nature dans le Vexin",
+    titleMain: "Au pas, au trot,",
+    titleAccent: "au galop.",
+    intro:"1h de préparation et soins, 2h de balade en pleine nature, 1h de soins au retour",
+    description: "Balade en groupe. Selon votre niveau, la balade peut évoluer aux trois allures.",
+    price: "70 € / 60 € à partir de 2",
+    cta: "Réserver",
+  },
+  {
+    num: "02",
+    category: "Balade DUO privatisée",
+    badge: "privatisée",
+    image: "/images/balade_2.jpg",
+    alt: "Balade duo privatisée dans le Vexin",
+    titleMain: "Un moment rien",
+    titleAccent: "qu'à deux.",
+    intro:"1h de préparation et soins, 2h de balade en pleine nature, 1h de soins au retour",
+    description: "Balade DUO privatisée. La formule duo au rythme du couple ou du binôme. Possibilité de pause pique-nique, ou d'organisation sur mesure pour une demande en mariage.",
+    price: "150 € pour 2 personnes",
+    cta: "Réserver",
+  },
+  {
+    num: "03",
+    category: "Balades à thème",
+    badge: "nature",
+    image: "/images/balade_3.jpg",
+    alt: "Balade ornithologique et faune sauvage dans le Vexin",
+    titleMain: "Observer, écouter,",
+    titleAccent: "découvrir.",
+    intro:"Passionnée par la biodiversité, la faune sauvage et formée en soins animaliers, je propose également des sorties à thème",
+    description: "• Sur les traces de la faune sauvage - Lecture des indices de présence, traces, comportements, habitats, observation et identification. • Balade ornithologique - Observation, identification, écoute et découverte des oiseaux du Vexin au fil des saisons.",
+    price: "sur demande",
+    cta: "En savoir plus",
+  },
+  {
+    num: "04",
+    category: "Cours pleine nature",
+    badge: "Cours",
+    image: "/images/cours.jpg",
+    alt: "Cours de pleine nature.",
+    titleMain: "Cours d'équitation",
+    titleAccent: "de Pleine Nature.",
+    intro:"Découvrir le cheval autrement, en immersion au cœur de la nature.",
+    description: "Chaque séance associe le plaisir de l’extérieur à l’apprentissage des bases de l’équitation d’extérieur : orientation, découverte du milieu naturel, TREC et franchissement d’obstacles naturels. Une approche idéale pour gagner en autonomie, en confiance et profiter pleinement d’une expérience de nature à cheval.",
+    price: "70€/2h - 280€/10h",
+    cta: "En savoir plus",
+  },
+]
+
+const after = [
+  {
+    more: "Après la balade…",
+    title: "Vous pouvez prolonger l’expérience à quelques pas :",
+    description: "• Jardins et Château de la Bûcherie • Golf du Prieuré • Route des impressionnistes vers Vétheuil • Château de La Roche-Guyon • Maison de Claude Monet Giverny • Moulin de Fourges",
+  },
+]
+
+const carousel = [
+  {
+    image: "/images/lieux/chateau.jpg",
+    alt: "chateau de la bûcherie vu depuis les champs du Vexin",
+    title: "Château de la Bûcherie",
+    link: "#contact",
+  },
+  {
+    image: "/images/lieux/golf.jpg",
+    alt: "Golf du Prieuré vu depuis les greens",
+    title: "Golf du Prieuré",
+    link: "#contact",
+  },
+  {
+    image: "/images/lieux/la_roche_guyon.jpg",
+    alt: "Château de La Roche-Guyon vu depuis les jardins",
+    title: "Château de La Roche-Guyon",
+    link: "#contact",
+  },
+  {
+    image: "/images/lieux/moulin.jpg",
+    alt: "Moulin vu depuis les champs du Vexin",
+    title: "Moulin de Fourges",
+    link: "#contact",
+  },
+  {
+    image: "/images/lieux/giverny.jpg",
+    alt: "Giverny vu depuis les jardins de la maison de Claude Monet",
+    title: "Giverny vu depuis les jardins",
+    link: "#contact",
+  },
+]
+---
+
+<section id="balades" class="bg-cream py-24 lg:py-36 reveal" aria-labelledby="balades-heading">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+
+    <div class="grid mb-8 md:mb-0 md:grid-cols-12 lg:grid-cols-12 gap-10 gap-y-5 items-end">
+      <div class="md:col-span-10 lg:col-span-7">
+        <div class="flex items-center gap-3 text-forest/70 text-[11px] uppercase tracking-[0.32em] mb-6 font-light">
+          <span class="w-10 h-[1px] bg-terra shrink-0"></span>
+          <span class="font-medium">Balades à cheval</span>
+        </div>
+        <h2 id="balades-heading" class="font-display text-forest-deep text-[clamp(40px,7vw,108px)] leading-[0.95] tracking-tight">
+          Nature, respiration <br/>
+          <span class="font-editorial ">et connexion</span>
+        </h2>
+      </div>
+      <div class="md:col-span-10 lg:col-span-4 lg:col-start-9">
+        <p class="text-forest/75 text-base lg:text-lg leading-relaxed">
+Partir à cheval avec 1001galops, c’est s’offrir une vraie parenthèse.
+Après un temps de rencontre, de préparation et de soin des chevaux, vous partez à travers les grands
+espaces du Vexin : chemins bordés de forêts, champs ouverts à perte de vue, lumière changeante au
+fil des saisons.</p>
+      </div>
+      <div class="md:col-span-8 lg:col-span-8">
+        <h3 class="font-display mb-4 text-[34px] lg:text-[40px] leading-none tracking-tight italic text-forest">Ici, on ne cherche pas la performance.</h3>
+        <p class="text-forest/75 text-base lg:text-lg leading-relaxed">
+        On prend le temps.
+        Le temps de rencontrer le cheval, de trouver son rythme, de se laisser porter par le paysage.
+        Selon le niveau des cavaliers, la balade peut évoluer aux trois allures.
+        Chaque sortie est pensée comme une bulle de bien-être, un moment pour soi, en lien avec l’animal
+        et la nature.  
+      </p>
+      </div>
+    </div>
+
+    <!-- Slider nav — masqué sur mobile -->
+    <div class="hidden md:flex items-center gap-3 justify-end mb-8">
+      <button
+        class="embla-exp__prev w-18 h-18 rounded-full border border-forest/20 flex items-center justify-center text-forest hover:bg-forest hover:text-cream transition-all duration-300 disabled:opacity-25 disabled:cursor-not-allowed"
+        aria-label="Précédent"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M14 18L8 12l6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button
+        class="embla-exp__next w-18 h-18 rounded-full border border-forest/20 flex items-center justify-center text-forest hover:bg-forest hover:text-cream transition-all duration-300 disabled:opacity-25 disabled:cursor-not-allowed"
+        aria-label="Suivant"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M10 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile : grille verticale / md+ : Embla -->
+    <div class="embla-exp  mb-12 lg:mb-16">
+      <div class="embla-exp__container flex flex-col gap-6 md:flex-row md:flex-nowrap  md:mr-6 lg:mr-12">
+        {balades.map((b) => (
+          <div class="embla-exp__slide w-full md:shrink-0 md:basis-1/2  lg:basis-1/3 ">
+            <a
+              href="#contact"
+              class="group relative bg-cream border border-forest/12 rounded-[28px] overflow-hidden flex flex-col hover:-translate-y-1 hover:border-forest/25 hover:shadow-[0_30px_60px_-30px_rgba(40,113,140,0.25)] transition-all duration-500 h-full"
+              aria-label={`${b.category}`}
+            >
+              <div class="relative aspect-[5/3] md:aspect-[1/1] overflow-hidden m-3 rounded-[20px]">
+                <img
+                  src={b.image}
+                  alt={b.alt}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1200ms]"
+                  loading="lazy"
+                />
+                <div class="absolute top-4 left-4 bg-cream/95 backdrop-blur-sm rounded-full px-3 py-1 text-forest-deep text-[10px] uppercase tracking-[0.1em] font-medium">
+                  {b.num} — {b.category}
+                </div>
+                <div class="absolute top-4 right-4 flex items-center gap-2 bg-forest-deep/80 backdrop-blur-md border border-cream/25 rounded-full px-3 py-1 text-cream text-[10px] uppercase tracking-[0.1em] font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blush shrink-0"></span>
+                  {b.badge}
+                </div>
+              </div>
+
+              <div class="px-7 pb-7 pt-2 flex-1 flex flex-col gap-3">
+                <div class="flex flex-col gap-3">
+                  <h3 class="font-display text-forest-deep text-[34px] lg:text-[40px] leading-none tracking-tight">
+                    {b.titleMain}<br/>
+                    <span class="italic text-forest">{b.titleAccent}</span>
+                  </h3>
+                  <span class="text-back/70 text-xs font-medium flex"><span class="mr-1">•</span> {b.intro}</span>
+                </div>
+                <p class="text-forest-deep/70 leading-relaxed text-[14px] font-light">{b.description}</p>
+                <div class="flex items-center justify-between mt-auto pt-5 border-t border-forest/12">
+                  <span class="text-forest text-[11px] uppercase tracking-[0.22em] font-medium">{b.price}</span>
+                  <span class="inline-flex items-center gap-2 text-terra text-[10px] uppercase tracking-[0.28em] font-medium">
+                    {b.cta}
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true" class="group-hover:translate-x-1 transition-transform">
+                      <path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-5 lg:gap-6 mt-12">
+      {after.map((e) => (
+        <div class="bg-cream/70  p-7 lg:p-9 flex flex-col gap-5 hover:bg-cream hover:border-forest/25 transition-all duration-500">
+          <div class="flex items-start justify-between">
+            <span class="text-terra font-display italic text-3xl">{e.more}</span>
+          </div>
+          <h3 class="font-display text-[24px] lg:text-[28px] leading-[1.05] tracking-tight font-semibold">{e.title}</h3>
+          <p class="text-forest-deep/65 leading-relaxed text-lg font-light">{e.description}</p>
+        </div>
+      ))}
+      <div class="relative aspect-5/4 rounded-[24px] overflow-hidden border border-forest/12">
+        <div class="embla-balades h-full">
+          <div class="embla-balades__viewport overflow-hidden h-full">
+            <div class="embla-balades__container relative h-full">
+              {carousel.map((s) => (
+                <div class="embla-balades__slide absolute inset-0">
+                  <img src={s.image} alt={s.alt} class="w-full h-full object-cover" loading="lazy" />
+                  {(s.title || s.link) && (
+                    <div class="absolute bottom-0 inset-x-0 bg-linear-to-t from-forest-deep/70 to-transparent px-6 pb-5 pt-10">
+                      {s.link ? (
+                        <a href={s.link} class="font-display italic text-cream text-2xl hover:text-blush transition-colors">
+                          {s.title} →
+                        </a>
+                      ) : (
+                        <span class="font-display italic text-cream text-2xl">{s.title}</span>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="absolute bottom-4 inset-x-0 flex justify-center gap-2 z-10">
+            {carousel.map((_, i) => (
+              <button class="embla-balades__dot w-2 h-2 rounded-full bg-cream/40 transition-all duration-300" aria-label={`Image ${i + 1}`}></button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import EmblaCarousel from 'embla-carousel'
+  import type { EmblaCarouselType } from 'embla-carousel'
+
+  const expNode = document.querySelector<HTMLElement>('.embla-exp')
+  const prevBtn = document.querySelector<HTMLButtonElement>('.embla-exp__prev')
+  const nextBtn = document.querySelector<HTMLButtonElement>('.embla-exp__next')
+
+  if (expNode) {
+    let embla: EmblaCarouselType | null = null
+
+    const updateButtons = () => {
+      prevBtn?.toggleAttribute('disabled', !embla?.canScrollPrev())
+      nextBtn?.toggleAttribute('disabled', !embla?.canScrollNext())
+    }
+
+    const mq = window.matchMedia('(min-width: 768px)')
+
+    const sync = (isMd: boolean) => {
+      if (isMd && !embla) {
+        embla = EmblaCarousel(expNode, { loop: false, align: 'start' })
+        prevBtn?.addEventListener('click', () => embla?.scrollPrev())
+        nextBtn?.addEventListener('click', () => embla?.scrollNext())
+        embla.on('select', updateButtons)
+        embla.on('reInit', updateButtons)
+        updateButtons()
+      } else if (!isMd && embla) {
+        embla.destroy()
+        embla = null
+      }
+    }
+
+    sync(mq.matches)
+    mq.addEventListener('change', (e) => sync(e.matches))
+  }
+</script>
+
+<script>
+  import EmblaCarousel from 'embla-carousel'
+  import Fade from 'embla-carousel-fade'
+  import Autoplay from 'embla-carousel-autoplay'
+
+  const viewport = document.querySelector<HTMLElement>('.embla-balades__viewport')
+  const dots = document.querySelectorAll<HTMLButtonElement>('.embla-balades__dot')
+
+  if (viewport) {
+    const embla = EmblaCarousel(viewport, { loop: true }, [
+      Fade(),
+      Autoplay({ delay: 3500, stopOnInteraction: false }),
+    ])
+
+    const updateDots = () => {
+      const idx = embla.selectedScrollSnap()
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-cream', i === idx)
+        dot.classList.toggle('scale-125', i === idx)
+        dot.classList.toggle('bg-cream/40', i !== idx)
+      })
+    }
+
+    embla.on('select', updateDots)
+    updateDots()
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => embla.scrollTo(i))
+    })
+  }
+</script>
