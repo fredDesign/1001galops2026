@@ -20,10 +20,10 @@ const links = {
 <footer class="bg-forest-deep text-cream pt-20 pb-10" aria-label="Pied de page">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
 
-    <div class="grid grid-cols-2  lg:grid-cols-12 gap-10 pb-14 border-b border-cream/10">
+    <div class="grid grid-cols-2 sm:grid-cols-6  lg:grid-cols-12 gap-10 pb-14 border-b border-cream/10">
 
       <!-- Brand -->
-      <div class="col-span-2 lg:col-span-5">
+      <div class="col-span-2 sm:col-span-6 lg:col-span-5">
         <div class="flex items-baseline gap-1.5 mb-5">
           <span class="font-display text-[36px] leading-none font-semibold uppercase text-cream">1001</span>
           <span class="font-display text-[36px] leading-none font-semibold uppercase text-blush">Galops</span>
@@ -32,10 +32,33 @@ const links = {
           <span class="text-xl font-medium">S'évader, respirer, bouger à cheval.</span><br> 
           Près de chez vous, en pleine nature, toute l'année.
         </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-5">
+        <div class="h-16 flex items-center">
+          <a href="https://www.yvelines.fr/" class="h-12 md:h-16" target="_blank" rel="noopener noreferrer">
+            <img src="/images/partners/logo-yvelines.svg" alt="Yvelines" class="h-full w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" />
+          </a>
+        </div>
+        <div class="h-16 flex items-center">
+          <a href="https://www.ffe.com/" class="h-12 md:h-16" target="_blank" rel="noopener noreferrer">
+            <img src="/images/partners/logo-ffe.svg" alt="Fédération Française d'Équitation" class="h-full w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" />
+          </a>
+        </div>
+        <div class="h-16 flex items-center">
+          <a href="https://www.parcduvexin.fr/" class="h-12 md:h-16" target="_blank" rel="noopener noreferrer">
+            <img src="/images/partners/logo-terre-de-seine.svg" alt="Terre de Seine" class="h-full w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" />
+          </a>
+        </div>
+        <div class="h-16 flex items-center">
+          <a href="https://www.terres-de-seine.fr/" class="h-12 md:h-16" target="_blank" rel="noopener noreferrer">
+            <img src="/images/partners/logo-vexin.svg" alt="Parc naturel régional du Vexin français" class="h-full w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" />
+          </a>
+        </div>
+      </div>
       </div>
 
       <!-- Expériences -->
-      <div class="col-span-1 lg:col-span-2">
+      <div class="col-span-1 sm:col-span-2 lg:col-span-2">
         <div class="text-sand/50 text-[10px] uppercase tracking-[0.25em] mb-4">Expériences</div>
         <ul class="flex flex-col gap-3 text-cream/85 text-sm">
           {links.experiences.map((l) => (
@@ -45,7 +68,7 @@ const links = {
       </div>
 
       <!-- À propos -->
-      <div class="col-span-1 lg:col-span-2">
+      <div class="col-span-1 sm:col-span-2 lg:col-span-2">
         <div class="text-sand/50 text-[10px] uppercase tracking-[0.25em] mb-4">À propos</div>
         <ul class="flex flex-col gap-3 text-cream/85 text-sm">
           {links.apropos.map((l) => (
@@ -55,7 +78,7 @@ const links = {
       </div>
 
       <!-- Contact -->
-      <div class="col-span-2 lg:col-span-3">
+      <div class="col-span-2 sm:col-span-2 lg:col-span-3">
         <div class="text-sand/50 text-[10px] uppercase tracking-[0.25em] mb-4">Contact</div>
         <address class="not-italic flex flex-col gap-3 text-cream/85 text-sm">
           <a href="mailto:contact@1001galops.fr" class="hover:text-blush transition-colors">contact@1001galops.fr</a>
