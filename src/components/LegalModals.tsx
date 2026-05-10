@@ -188,7 +188,7 @@ export function LegalModals() {
       {modals.map(({ label, title, content }) => (
         <Dialog key={label}>
           <DialogTrigger asChild>
-            <button className="text-[12px] text-sand/50 hover:text-cream transition-colors cursor-pointer bg-transparent border-0 p-0">
+            <button className="text-[12px] text-sand/75 hover:text-cream transition-colors cursor-pointer bg-transparent border-0 p-0">
               {label}
             </button>
           </DialogTrigger>
