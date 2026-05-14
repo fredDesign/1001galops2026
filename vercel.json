@@ -1,5 +1,17 @@
 {
   "framework": "astro",
+  "redirects": [
+    { "source": "/balade&rando/", "destination": "/", "permanent": true },
+    { "source": "/balade&rando", "destination": "/", "permanent": true },
+    { "source": "/cours/", "destination": "/", "permanent": true },
+    { "source": "/cours", "destination": "/", "permanent": true },
+    { "source": "/evenementiel/", "destination": "/", "permanent": true },
+    { "source": "/evenementiel", "destination": "/", "permanent": true },
+    { "source": "/travaille-du-cheval/", "destination": "/", "permanent": true },
+    { "source": "/travaille-du-cheval", "destination": "/", "permanent": true },
+    { "source": "/clubs/", "destination": "/", "permanent": true },
+    { "source": "/clubs", "destination": "/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/images/(.*)",
