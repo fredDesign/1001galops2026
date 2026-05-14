@@ -1,0 +1,39 @@
+---
+import Layout from "@/layouts/main.astro"
+import Nav from "@/components/Nav.astro"
+import Hero from "@/components/Hero.astro"
+import HeroBody404 from "@/components/HeroBody404.astro"
+import Marquee from "@/components/Marquee.astro"
+import Contact from "@/components/Contact.astro"
+import Footer from "@/components/Footer.astro"
+---
+
+<Layout
+  title="Page introuvable — 1001 Galops"
+  description="Cette page n'existe pas. Revenez à l'accueil pour découvrir nos balades à cheval, yoga équestre et événements nature dans le Vexin."
+  noindex={true}
+>
+  <Nav />
+  <main>
+    <Hero
+      tagline="Cette page n'existe pas,"
+      taglineAccent="mais l'aventure continue."
+      ariaLabel="Page introuvable"
+      body={HeroBody404}
+    />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("in")
+      })
+    },
+    { threshold: 0.08 }
+  )
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el))
+</script>
