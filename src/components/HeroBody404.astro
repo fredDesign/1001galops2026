@@ -1,22 +1,24 @@
 ---
 ---
 
-<div class="flex-1 flex flex-col items-center justify-center text-center pb-16">
-  <div class="card bg-forest-deep/80 flex flex-col items-center justify-center p-10 rounded-2xl max-w-5xl">
-  <h2 class="text-cream/85 text-3xl lg:text-4xl  lg:leading-tight font-semibold mb-12">
-    Vous vous êtes égaré — comme un cheval en liberté.<br>
-    Retournez à l'accueil pour découvrir nos balades,<br>
-    yoga équestre et événements dans le Vexin.
+<div class="flex-1 flex flex-col items-center justify-center text-center p-8 md:pb-16">
+  <div class="cur relative group card bg-forest-deep/80 flex flex-col items-center justify-center p-10 rounded-2xl max-w-5xl">
+  <h2 class=" pointer-events-none z-1 text-cream/85 text-lg md:text-xl lg:text-2xl flex flex-col items-center lg:leading-tight font-semibold mb-12">
+    <span class="text-2xl md:text-4xl lg:text-5xl mb-3"> Vous êtes égaré.</span>
+    <span>Retournez à l'accueil pour continuer votre balade.</span>
   </h2>
 
   <a
     href="/"
-    class="group inline-flex items-center justify-center gap-4 bg-cream hover:bg-blush text-forest-deep px-12 py-6 rounded-full text-sm uppercase tracking-[0.28em] font-medium transition-colors"
+    class=""
   >
-    Retour à l'accueil
+  <span class="z-0 absolute inset-0 rounded-2xl max-w-5xl bg-forest-deep/30 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+  <span class=" z-1 relative inline-flex items-center justify-center gap-4 bg-cream hover:bg-blush text-forest-deep px-12 py-6 rounded-full text-sm uppercase tracking-[0.28em] font-medium transition-colors">
+    <span class="z-1 ">Retour à l'accueil</span>
     <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true" class="group-hover:translate-x-1 transition-transform">
       <path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
     </svg>
+    </span>
   </a>
 </div>
 </div>
